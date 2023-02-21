@@ -1,8 +1,7 @@
 version: '3.8'
 
-Networks:
-    proxy_manager:
-        external: true
+
+    
 
 services:
     mongodb:
@@ -13,8 +12,7 @@ services:
             - 27017:27017
         volumes:
             - db:/data/db
-        networks:
-            - proxy_manager
+        
     app:
         container_name: api
         build:
@@ -39,8 +37,7 @@ services:
         volumes:
             - ./:/home/node/app
             - /home/node/app/node_modules/
-        networks:
-            - proxy_manager    
+          
 
 volumes:
     db:
