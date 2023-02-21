@@ -1,5 +1,9 @@
 version: '3.8'
 
+Networks:
+    proxy_manager:
+        external: true
+
 services:
     mongodb:
         container_name: mongodb
